@@ -90,8 +90,6 @@ docker run tp:v4 override
 
 CMD est remplacé par l'argument s'il est fourni, mais ENTRYPOINT reste le même, le script est toujours exécuté.
 
---
-
 # Partie 5 - Script wrapper avec ENTRYPOINT
 
 1. Construire et tester (CMD) :
@@ -107,3 +105,14 @@ docker run tp:v5 ls -1
 ```
 ![img](./public/12.png)
 --
+
+# Partie 6 - Multi-stage build (approche avancée)
+1. Construire et tester (CMD) :
+```cmd
+docker build -f v6/Dockerfile -t tp:v6 .
+docker run tp:v6
+```
+- un layer par commande, donc trois layers, dans la partie 2.
+Et les layers du stage build ne sont pas inclus dans l’image finale.
+- l’image finale est légère et ne contient pas les librairies de développement.
+- L’image finale ne contient que le code compilé, sans le code source ni les outils de compilation, ce qui la rend plus légère et plus sûre.
