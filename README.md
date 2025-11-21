@@ -91,3 +91,19 @@ docker run tp:v4 override
 CMD est remplacé par l'argument s'il est fourni, mais ENTRYPOINT reste le même, le script est toujours exécuté.
 
 --
+
+# Partie 5 - Script wrapper avec ENTRYPOINT
+
+1. Construire et tester (CMD) :
+```cmd
+docker build -f v5/Dockerfile -t tp:v5 .
+docker run tp:v5
+```
+![img](./public/11.png)
+
+2. Testé avec argument : 
+```cmd
+docker run tp:v5 ls -1
+```
+![img](./public/12.png)
+--
