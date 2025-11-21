@@ -29,3 +29,21 @@ Cela l'affiche l'historique de la construction de mon image. Et l'on peut voir c
 
 ![img](./public/4.png)
 --
+
+# Partie 2 — Ajouter un RUN et observer les layers
+
+1. Construire et éxecuter :
+```cmd
+docker build -f v2/Dockerfile -t tp:v2 .
+docker run tp:v2
+```
+
+![img](./public/5.png)
+
+2. Analyse de l'historique
+
+Un layer est apparu celui du **"RUN apk add --no-cache bash"**.
+Chaque instruction Dockerfile qui modifie le système de fichiers (comme RUN, COPY, ADD) crée une layer.
+
+![img](./public/6.png)
+--
