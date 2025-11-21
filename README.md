@@ -63,3 +63,31 @@ Seule la dernière layer **"COPY app/. ."** a été reconstruite à cause du cha
 
 ![img](./public/8.png)
 --
+
+# Partie 4 - Comprendre ENTRYPOINT et CMD
+
+1. Construire :
+```cmd
+docker build -f v4/Dockerfile -t tp:v4 .
+```
+2. Tester sans argument :
+```cmd
+docker run tp:v4
+```
+
+![img](./public/9.png)
+
+3. Tester avec un argument :
+```cmd
+docker run tp:v4 override
+```
+![img](./public/10.png)
+
+```ENTRYPOINT  = ["/app/hello.sh"]``` & ```CMD = ["default-arg"]```
+
+- docker run tp:v4 → /app/hello.sh default-arg
+- docker run tp:v4 override → /app/hello.sh override
+
+CMD est remplacé par l'argument s'il est fourni, mais ENTRYPOINT reste le même, le script est toujours exécuté.
+
+--

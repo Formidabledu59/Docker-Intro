@@ -1,2 +1,2 @@
 #!/bin/sh
-echo Hello from inside the container - v3
+echo "Argument reçu: $1"
