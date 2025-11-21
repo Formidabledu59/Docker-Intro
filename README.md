@@ -27,5 +27,5 @@ docker history tp:v1
 ```
 Cela l'affiche l'historique de la construction de mon image. Et l'on peut voir chaque couche (layer). ici on a 4 layers. Avec celle du "L’instruction **FROM alpine:3.20**" qui contient tout le système de fichiers de base d’Alpine Linux.
 
-![img](image.png)
+![img](./public/4.png)
 --
